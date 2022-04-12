@@ -1,11 +1,12 @@
 
 const grid = document.querySelector('.grid');
 const body = document.querySelector('body');
-let selectedColor = 'black';
+let selectedColor = document.querySelector('#colorpicker').value;
 let clicking = false;
 let tamanhoGrid = 16;
 let quantidadeQuadrados = tamanhoGrid * tamanhoGrid;
 let randomMode = false;
+let nan = NaN;
 
 function randomModeToggle(){
     let btn = document.querySelector('.random');
@@ -40,7 +41,15 @@ function makeGrid(){
         div.classList.add('gridSquare')
         div.style.width = tamanhoQuadrado;
         div.style.height = tamanhoQuadrado;
+        div.addEventListener('mousedown', () =>{
+            selectedColor = document.querySelector('#colorpicker').value;
+            if(randomMode){
+                selectedColor = `rgb(${Math.floor(Math.random() * 255 + 1)}, ${Math.floor(Math.random() * 255 + 1)}, ${Math.floor(Math.random() * 255 + 1)})`
+            }
+            div.style.backgroundColor = selectedColor;
+        });
         div.addEventListener('mouseenter', () =>{
+            selectedColor = document.querySelector('#colorpicker').value;
             if(clicking){
                 if(randomMode){
                     selectedColor = `rgb(${Math.floor(Math.random() * 255 + 1)}, ${Math.floor(Math.random() * 255 + 1)}, ${Math.floor(Math.random() * 255 + 1)})`
@@ -61,7 +70,8 @@ function clearGrid(){
     });
 
     tamanhoGrid = 1;
-    while(tamanhoGrid < 8 || tamanhoGrid > 100){
+
+    while(tamanhoGrid < 8 || tamanhoGrid > 100 || Object.is(nan, tamanhoGrid)){
         tamanhoGrid = Number.parseInt(prompt('Qual o tamanho do grid desejado? (Min. 8 / Max. 100)'));
     }
     makeGrid();

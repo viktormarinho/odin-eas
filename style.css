@@ -24,7 +24,7 @@ header{
     font-size: 16px;
     padding: 4px 12px;
     font-family: 'Courier New', Courier, monospace;
-
+    cursor: pointer;
 }
 .toolbar{
     display: flex;
@@ -37,6 +37,7 @@ header{
     height: 512px;
     width: 128px;
     gap: 16px;
+    font-family: 'Courier New', Courier, monospace;
 }
 .grid div{
     -webkit-user-select: none;
@@ -56,6 +57,7 @@ header{
 .random{
     font-size: 16px;
     padding: 4px 12px;
+    cursor: pointer;
     font-family: 'Courier New', Courier, monospace;    
 }
 .random-clicked{
@@ -63,4 +65,10 @@ header{
     color: white;
     border: 2px solid black;
     border-radius: 4px;
+}
+#colorpicker{
+    width: 60px;
+    height: 60px;
+    border: none;
+    cursor: pointer;
 }
