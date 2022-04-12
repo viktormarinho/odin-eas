@@ -7,6 +7,7 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background-color: bisque;
 }
 header{
     font-size: 32px;
@@ -38,6 +39,7 @@ header{
     width: 128px;
     gap: 16px;
     font-family: 'Courier New', Courier, monospace;
+    background-color: white;
 }
 .grid div{
     -webkit-user-select: none;

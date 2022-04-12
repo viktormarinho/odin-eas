@@ -41,6 +41,7 @@ function makeGrid(){
         div.classList.add('gridSquare')
         div.style.width = tamanhoQuadrado;
         div.style.height = tamanhoQuadrado;
+        div.style.backgroundColor = 'white';
         div.addEventListener('mousedown', () =>{
             selectedColor = document.querySelector('#colorpicker').value;
             if(randomMode){
